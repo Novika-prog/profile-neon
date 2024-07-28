@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Novika Sari Dwi Cahyani</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        color: #fff;
+      }
+      .container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+      }
+      header {
+        background: #000;
+        color: #0ff;
+        padding-top: 30px;
+        min-height: 70px;
+        border-bottom: #0ff 3px solid;
+        text-align: center;
+      }
+      header a {
+        color: #0ff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 16px;
+      }
+      header ul {
+        padding: 0;
+        list-style: none;
+      }
+      header li {
+        display: inline;
+        padding: 0 20px;
+      }
+      header #branding {
+        text-align: center;
+      }
+      header #branding h1 {
+        margin: 0;
+      }
+      header nav {
+        margin-top: 10px;
+      }
+      section {
+        padding: 20px;
+        margin-top: 20px;
+        background: #111;
+        border: 2px solid #0ff;
+      }
+      footer {
+        background: #000;
+        color: #0ff;
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+        border-top: #0ff 3px solid;
+      }
+      h2 {
+        color: #0ff;
+      }
+      a {
+        color: #0ff;
+      }
+      .slideshow-container {
+        position: relative;
+        max-width: 100%;
+        margin: auto;
+      }
+      .slides {
+        display: none;
+      }
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: #0ff;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+      .active,
+      .dot:hover {
+        background-color: #717171;
+      }
+      .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="branding">
+          <h1>Novika Sari Dwi Cahyani</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#tentang">Tentang Saya</a></li>
+            <li><a href="#portofolio">Portofolio</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="tentang">
+      <div class="container">
+        <h2>Tentang Saya</h2>
+        <p>
+          Halo! Nama saya Novika Sari Dwi Cahyani, seorang designer dengan minat
+          besar di dunia teknologi, terutama pemrograman mobile. Saya memiliki
+          hobi mempelajari pemrograman dan berbagai framework untuk meningkatkan
+          keterampilan saya.
+        </p>
+      </div>
+    </section>
+
+    <section id="portofolio">
+      <div class="container">
+        <h2>Portofolio</h2>
+        <p>
+          Di sini, Anda dapat melihat beberapa proyek yang telah saya kerjakan:
+        </p>
+        <div class="slideshow-container">
+          <div class="slides fade">
+            <img src="image1.jpg" style="width: 100%" />
+          </div>
+          <div class="slides fade">
+            <img src="image2.jpg" style="width: 100%" />
+          </div>
+          <div class="slides fade">
+            <img src="image3.jpg" style="width: 100%" />
+          </div>
+          <!-- Tambahkan lebih banyak gambar sesuai kebutuhan -->
+
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br />
+
+        <div style="text-align: center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <!-- Tambahkan lebih banyak dot sesuai kebutuhan -->
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <div class="container">
+        <h2>Kontak</h2>
+        <p>Anda dapat menghubungi saya melalui:</p>
+        <ul>
+          <li>
+            Email: <a href="mailto:email@example.com">email@example.com</a>
+          </li>
+          <li>Telepon: +62 123 4567 890</li>
+          <!-- Tambahkan metode kontak lainnya jika diperlukan -->
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Novika Sari Dwi Cahyani</p>
+    </footer>
+
+    <script>
+      let slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 2000); // Ubah gambar setiap 2 detik
+      }
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+    </script>
+  </body>
+</html>
